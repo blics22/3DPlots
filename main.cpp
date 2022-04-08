@@ -14,7 +14,9 @@ int main(int argc, char** argv)
   bars.show();
   
   /*
-      //! [0]
+  https://code.qt.io/cgit/qt/qtdatavis3d.git/tree/examples/datavisualization/bars?h=5.15
+  
+  //! [0]
     QApplication app(argc, argv);
     Q3DBars *widgetgraph = new Q3DBars();
     QWidget *container = QWidget::createWindowContainer(widgetgraph);

@@ -1,7 +1,7 @@
 # 3DPlots
 
 # Install xLaunch on windows.. 
-
+https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242
 settings:
 multiple
 display num 0 (maybe -1. cant remember)
@@ -11,6 +11,17 @@ check disable access control
 
 # install wsl on windows
 -- https://docs.microsoft.com/en-us/windows/wsl/install
+
+# Env variables
+add this to ~/.bashrc
+
+```                                               
+HOST_IP=$(host `hostname` | grep -oP '(\s)\d+(\.\d+){3}' | tail -1 | awk '{ print $NF }' | tr -d '\r')                  
+export LIBGL_ALWAYS_INDIRECT=0                                                                                          
+export DISPLAY=$HOST_IP:0.0                                                                                             
+export NO_AT_BRIDGE=1                                                                                                   
+export PULSE_SERVER=tcp:$HOST_IP
+```
 
 # Things to install on Ubuntu
 ```
@@ -38,6 +49,8 @@ glxgears
 
 
 # download qt stuff
+In the ubuntu terminal download qt 
+https://www.qt.io/download-qt-installer
 google download qt-unified-linux-x64-4.3.0-1-online.run
 
 install qt5.15.2
@@ -49,13 +62,4 @@ create a code folder and get the repo
 git clone https://github.com/camdingo/3DPlots.git
 ```
 
-# Env variables
-add this to ~/.bashrc
 
-```                                               
-HOST_IP=$(host `hostname` | grep -oP '(\s)\d+(\.\d+){3}' | tail -1 | awk '{ print $NF }' | tr -d '\r')                  
-export LIBGL_ALWAYS_INDIRECT=0                                                                                          
-export DISPLAY=$HOST_IP:0.0                                                                                             
-export NO_AT_BRIDGE=1                                                                                                   
-export PULSE_SERVER=tcp:$HOST_IP
-```
